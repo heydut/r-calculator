@@ -1,38 +1,36 @@
 import styled from "styled-components";
-import Button from "./Button";
-import Screen from "./Screen";
-import { useState, useEffect, useCallback } from "react";
-import { evaluate } from "mathjs";
 
 const Keyboard = (props) => {
-  const [typedNumbers, setTypedNumbers] = useState("");
-  const [results, setResults] = useState(0);
+  // const [typedNumbers, setTypedNumbers] = useState("");
+  // const [results, setResults] = useState(0);
 
-  function screenNumbers(number) {
-    if (number === "=") {
-      setResults(evaluate(typedNumbers));
-    } else {
-      setTypedNumbers(typedNumbers + number);
-    }
-  }
+  // function screenNumbers(number) {
+  //   if (number === "=") {
+  //     setResults(evaluate(typedNumbers));
+  //   } else {
+  //     setTypedNumbers(typedNumbers + number);
+  //   }
+  // }
 
-  //   useEffect(() => {
-  //     console.log(typedNumbers);
-  //     console.log(results);
-  //   }, [typedNumbers, results]);
+  // useEffect(() => {
+  //   console.log(typedNumbers);
+  //   console.log(results);
+  // }, [typedNumbers, results]);
 
   return (
-    <>
-      <KeyboardStyled>
-        {props.numbers.flat().map((number, i) => {
-          return (
-            <Button key={number} onClick={() => screenNumbers(number)}>
-              {number}
-            </Button>
-          );
-        })}
-      </KeyboardStyled>
-    </>
+    <KeyboardStyled>
+      {
+        props.children
+
+        /* {props.numbers.flat().map((number, i) => {
+        return (
+          <Button key={number} onClick={() => screenNumbers(number)}>
+            {number}
+          </Button>
+        );
+      })} */
+      }
+    </KeyboardStyled>
   );
 };
 

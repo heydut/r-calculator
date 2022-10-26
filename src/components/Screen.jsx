@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import React from "react";
-import Keyboard from "./Keyboard";
 
 const Screen = (props) => {
-  return <ScreenStyled>{}</ScreenStyled>;
+  return <ScreenStyled>{props.screenResult}</ScreenStyled>;
 };
 
 export default Screen;

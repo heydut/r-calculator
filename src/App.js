@@ -24,7 +24,9 @@ const App = () => {
     } else if (e.target.innerHTML === "AC") {
       setTypedNumbers("");
     } else if (e.target.innerHTML === "+/-") {
-      setTypedNumbers(-Math.abs(typedNumbers));
+      setTypedNumbers(
+        typedNumbers > 0 ? -Math.abs(typedNumbers) : Math.abs(typedNumbers)
+      );
     } else {
       setTypedNumbers(typedNumbers + e.target.innerHTML);
     }
